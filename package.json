@@ -2,6 +2,7 @@
   "name": "todolist",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://Chariselyasa123.github.io/Todolist",
   "dependencies": {
     "gh-pages": "^4.0.0",
     "react": "^18.2.0",
