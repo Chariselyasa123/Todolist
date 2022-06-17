@@ -1,0 +1,12 @@
+.wrapper-todolist{
+    width: 800px;
+    height: 700px;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    border-radius: 5%;
+    background: #f0efeb;
+    box-shadow:  5px 5px 16px #d8d7d4,
+                -5px -5px 16px #ffffff;
+    padding: 2rem;
+}

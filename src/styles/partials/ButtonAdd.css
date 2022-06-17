@@ -1,0 +1,27 @@
+.button-add{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    background-color: #686DE0;
+    box-shadow:  4px 4px 7px #e2e1dd,
+             -4px -4px 7px #fefdf9;
+    transition: all .1s ease-in-out;
+}
+
+.button-add .icon{
+    width: 2.5rem;
+    color: #e2e1dd;
+}
+
+.button-add:hover{
+    background-color:#4045D8;
+    color:#f0efeb;
+    transform: scale(1.2);
+}
+
+.button-add:active{
+    background-color:#282DC2;
+    color:#f0efeb;
+    transform: translateY(4px);
+}

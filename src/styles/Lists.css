@@ -1,0 +1,16 @@
+.lists{
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.undone, .done{
+    display: flex;
+    flex-direction: column;
+    gap:1rem;
+}
+
+.undone h3, .done h3{
+    font-weight: 700;
+}
