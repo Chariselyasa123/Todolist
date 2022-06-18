@@ -1,4 +1,4 @@
-# Neumorphism Todo App
+# Neumorphism Todo App 📝
 
 ## Assets
 
@@ -8,7 +8,7 @@
 
 ### Icons
 
-- Emoji Default
+- Emoji Default 👍
 - [Hero Icons](https://heroicons.com/)
 - [Font Awesome 6](https://fontawesome.com/)
 - [favicon.ico](https://favicon.io/)
