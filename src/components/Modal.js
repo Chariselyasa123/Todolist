@@ -21,7 +21,7 @@ const Modal = ({ isOpen, onClose, todo, type }) => {
         setIsInputError(false)
     }
 
-    const handleButtonTodoModal = () => {
+    const addTodo = () => {
         if (inputValue?.length <= 0) {
             setIsInputError(true)
             return
@@ -55,6 +55,16 @@ const Modal = ({ isOpen, onClose, todo, type }) => {
         onClose()
     }
 
+    const handleEnterKeyPress = (e) => {
+        if (e.key === 'Enter') {
+            addTodo()
+        }
+    }
+
+    const handleButtonTodoModal = () => {
+        addTodo()
+    }
+
 
     return (
         <div className={`modal fade ${isOpen && 'show'}`}>
@@ -75,6 +85,7 @@ const Modal = ({ isOpen, onClose, todo, type }) => {
                                 value={inputValue}
                                 onChange={handleInputChange}
                                 isError={isInputError}
+                                onKeyPress={handleEnterKeyPress}
                             />
                             <ButtonAdd
                                 onClick={handleButtonTodoModal}
