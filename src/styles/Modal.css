@@ -109,10 +109,15 @@
 .button-close-modal .icon{
     width: 1.2rem;
 }
-
-@media (min-width: 576px){
+/* Responsive */
+/* For Mobile Device */
+@media (max-width: 640px) {
     .modal-dialog {
-        max-width: 500px;
-        margin: 1.75rem auto;
+        max-width: 100%;
+        margin:0;
+    }
+
+    .modal-content{
+        height: 100%;
     }
 }

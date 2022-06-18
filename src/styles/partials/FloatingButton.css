@@ -1,0 +1,39 @@
+.float{
+    position:fixed;
+    width:60px;
+    height:60px;
+    bottom:40px;
+    right:30px;
+    text-align:center;
+    font-size: 1rem;
+    border-color: #d1d9e6;
+    box-shadow: 3px 3px 6px #b8b9be, -3px -3px 6px #fff;
+    border-radius: 2rem;
+    color: #555555;
+    background-color: #e6e7ee;
+    display: none;
+    transition: all .3s ease-in-out;
+}
+
+.float:hover{
+    transform: scale(1.1);
+}
+
+.float:active {
+    color: #31344b;
+    background-color: #e6e7ee;
+    border-color: #e6e7ee;
+    box-shadow: inset 2px 2px 5px #b8b9be, inset -3px -3px 7px #fff;
+}
+
+.float .icon{
+    width: 2.5rem;
+}
+
+/* Responsive */
+/* For Mobile Device */
+@media (max-width: 640px) {
+    .float{
+        display: block;
+    }
+}

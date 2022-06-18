@@ -44,7 +44,11 @@ const todoReducer = (state, action) => {
 }
 
 const TodoProvider = ({ children }) => {
-    const [todos, dispatch] = useReducer(todoReducer, []);
+    const [todos, dispatch] = useReducer(todoReducer, [{
+        id: Date.now(),
+        label: "Belajar di progate 🔥",
+        isDone: false
+    }]);
 
     return (
         <todoContext.Provider value={{ todos, dispatch }}>

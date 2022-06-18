@@ -7,12 +7,17 @@ import WrapperInput from './WrapperInput';
 import InputText from './partials/InputText';
 import ButtonAdd from './partials/ButtonAdd';
 import { useTodo } from '../fetures/todo-contex';
+import Title from './Title';
+import FloatingButton from './partials/FloatingButton';
+import Modal from './Modal';
+import Footer from './partials/Footer';
 
 const TodoList = () => {
     const { dispatch } = useTodo();
 
     const [inputValue, setInputValue] = useState('')
     const [isInputError, setIsInputError] = useState(false)
+    const [isModalOpen, setIsModalOpen] = useState(false)
 
     const handleInputChange = (e) => {
         setInputValue(e.target.value)
@@ -39,8 +44,17 @@ const TodoList = () => {
         setInputValue('')
     }
 
+    const handleOpenModal = () => {
+        setIsModalOpen(true)
+    }
+
+    const handleCloseModal = () => {
+        setIsModalOpen(false)
+    }
+
     return (
         <Layout>
+            <Title />
             <WrapperInput>
                 <InputText
                     onChange={handleInputChange}
@@ -53,9 +67,20 @@ const TodoList = () => {
                 />
             </WrapperInput>
             <WrapperBody>
-                <Header />
-                <Lists />
+                <div>
+                    <Header />
+                    <Lists />
+                </div>
+                <FloatingButton
+                    onClick={handleOpenModal}
+                />
+                <Footer />
             </WrapperBody>
+            <Modal
+                isOpen={isModalOpen}
+                onClose={handleCloseModal}
+                type="add"
+            />
         </Layout>
     )
 }
