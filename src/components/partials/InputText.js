@@ -1,10 +1,11 @@
 import '../../styles/partials/InputText.css'
 
-const InputText = ({ value, onChange, isError }) => {
+const InputText = ({ value, onChange, onKeyPress, isError }) => {
     return (
         <div className="input-text">
             <input
                 onChange={onChange}
+                onKeyPress={e => onKeyPress(e)}
                 type="text"
                 value={value}
                 placeholder={`${isError ? 'Please fill the filed first...' : 'Write Todo Here...'}`}

@@ -11,6 +11,7 @@ import Title from './Title';
 import FloatingButton from './partials/FloatingButton';
 import Modal from './Modal';
 import Footer from './partials/Footer';
+import '../styles/TodoList.css';
 
 const TodoList = () => {
     const { dispatch } = useTodo();
@@ -24,11 +25,12 @@ const TodoList = () => {
         setIsInputError(false)
     }
 
-    const handleAddTodo = () => {
+    const addTodo = () => {
         if (inputValue.length <= 0) {
             setIsInputError(true)
             return
         }
+
 
         // store todo in context global state
         dispatch({
@@ -42,6 +44,16 @@ const TodoList = () => {
 
         // reset input
         setInputValue('')
+    }
+
+    const handleEnterKeyPress = (e) => {
+        if (e.key === 'Enter') {
+            addTodo()
+        }
+    }
+
+    const handleAddTodo = () => {
+        addTodo();
     }
 
     const handleOpenModal = () => {
@@ -60,6 +72,7 @@ const TodoList = () => {
                     onChange={handleInputChange}
                     isError={isInputError}
                     value={inputValue}
+                    onKeyPress={handleEnterKeyPress}
                 />
                 <ButtonAdd
                     onClick={handleAddTodo}
@@ -67,7 +80,7 @@ const TodoList = () => {
                 />
             </WrapperInput>
             <WrapperBody>
-                <div>
+                <div className="todo-list">
                     <Header />
                     <Lists />
                 </div>
