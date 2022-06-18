@@ -80,6 +80,7 @@ const TodoList = () => {
                 isOpen={isModalOpen}
                 onClose={handleCloseModal}
                 type="add"
+                todo={{ label: '' }}
             />
         </Layout>
     )

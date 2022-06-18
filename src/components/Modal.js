@@ -12,10 +12,8 @@ const Modal = ({ isOpen, onClose, todo, type }) => {
 
 
     useEffect(() => {
-        if (type !== 'add') {
-            setInputValue(todo.label)
-        }
-    }, [type !== 'add' && todo.label])
+        setInputValue(todo.label)
+    }, [todo.label])
 
 
     const handleInputChange = (e) => {
