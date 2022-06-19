@@ -89,7 +89,7 @@ const TodoList = () => {
                 </div>
 
                 {/* This only show on responsive view */}
-                <div className="hidden-gem"></div>
+                {/* <div className="hidden-gem"></div> */}
                 <FloatingButton
                     onClick={handleOpenModal}
                 />
