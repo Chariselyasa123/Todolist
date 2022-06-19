@@ -1,10 +1,13 @@
 import { TodoProvider } from "./fetures/todo-contex";
 import TodoList from './components/TodoList';
+import { TabProvider } from "./fetures/tab-contex";
 
 function App() {
   return (
     <TodoProvider>
-      <TodoList />
+      <TabProvider>
+        <TodoList />
+      </TabProvider>
     </TodoProvider>
   );
 }

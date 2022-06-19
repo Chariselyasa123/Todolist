@@ -20,9 +20,6 @@ input[type="text"]{
     border: none;
     border-radius: 5px;
     font-size: 1rem;
-    background: #f0efeb;
-    box-shadow: 3px 3px 10px #e2e1dd,
-                -3px -3px 10px #fefdf9;
     transition: all .3s ease-in-out;
 }
 
@@ -39,8 +36,8 @@ input[type="text"]:focus::placeholder{
 input[type="text"]:focus{
     padding-left: 1rem;
     background: #686DE0;
-    box-shadow: inset 3px 3px 10px #6266d3,
-                inset -3px -3px 10px #6e74ed;
+	box-shadow: inset 5px 5px 10px #5256b1,
+				inset -5px -5px 10px #7e84ff;
     color:white;
 }
 

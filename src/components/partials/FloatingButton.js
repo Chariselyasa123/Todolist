@@ -4,7 +4,7 @@ const FloatingButton = ({ onClick }) => {
     return (
         <button
             type="button"
-            className="float"
+            className="float float-button todo-neumorphism-outside"
             onClick={onClick}
         >
             <svg xmlns="http://www.w3.org/2000/svg" className="icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>

@@ -1,11 +1,13 @@
 import '../styles/Lists.css'
 import ListItem from './partials/ListItem';
 import { useTodo } from '../fetures/todo-contex';
+import { useTab } from '../fetures/tab-contex';
 import { Fragment, useState } from 'react';
 import Modal from './Modal';
 
 const Lists = () => {
     const { todos, dispatch } = useTodo();
+    const { tab } = useTab();
 
     const [isModalOpen, setIsModalOpen] = useState(false)
     const [modalData, setModalData] = useState({})
@@ -55,41 +57,45 @@ const Lists = () => {
     return (
         <>
             <main className="lists">
-                <div className="undone">
-                    <h3 className="text-lg">Todo's</h3>
-                    {todos.map(todo => (
-                        <>
-                            {!todo.isDone && (
-                                <Fragment key={todo.id}>
-                                    <ListItem
-                                        todo={todo}
-                                        onChange={handleCheckboxChange}
-                                        onDelete={handleDeleteTodo}
-                                        openModal={handleOpenModal}
-                                    />
-                                </Fragment>
-                            )}
-                        </>
-                    ))}
-                </div>
-                <div className="done">
-                    {todos.find(todo => todo.isDone) && (
-                        <h3 className="text-lg">Completed</h3>
-                    )}
-                    {todos.map(todo => (
-                        <>
-                            {todo.isDone && (
-                                <Fragment key={todo.id}>
-                                    <ListItem
-                                        todo={todo}
-                                        onChange={handleCheckboxChange}
-                                        onDelete={handleDeleteTodo}
-                                    />
-                                </Fragment>
-                            )}
-                        </>
-                    ))}
-                </div>
+                {(tab.tab === 'todo' || tab.tab === 'all') &&
+                    <div className="undone">
+                        <h3 className="text-lg">Todo's</h3>
+                        {todos.map(todo => (
+                            <>
+                                {!todo.isDone && (
+                                    <Fragment key={todo.id}>
+                                        <ListItem
+                                            todo={todo}
+                                            onChange={handleCheckboxChange}
+                                            onDelete={handleDeleteTodo}
+                                            openModal={handleOpenModal}
+                                        />
+                                    </Fragment>
+                                )}
+                            </>
+                        ))}
+                    </div>
+                }
+                {(tab.tab === 'completed' || tab.tab === 'all') &&
+                    <div className="done">
+                        {todos.find(todo => todo.isDone) && (
+                            <h3 className="text-lg">Completed</h3>
+                        )}
+                        {todos.map(todo => (
+                            <>
+                                {todo.isDone && (
+                                    <Fragment key={todo.id}>
+                                        <ListItem
+                                            todo={todo}
+                                            onChange={handleCheckboxChange}
+                                            onDelete={handleDeleteTodo}
+                                        />
+                                    </Fragment>
+                                )}
+                            </>
+                        ))}
+                    </div>
+                }
             </main>
             <Modal
                 isOpen={isModalOpen}

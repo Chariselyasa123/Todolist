@@ -12,6 +12,8 @@ import FloatingButton from './partials/FloatingButton';
 import Modal from './Modal';
 import Footer from './partials/Footer';
 import '../styles/TodoList.css';
+import Tabs from './partials/Tabs';
+import FloatingTabs from './partials/FloatingTabs';
 
 const TodoList = () => {
     const { dispatch } = useTodo();
@@ -68,6 +70,7 @@ const TodoList = () => {
         <Layout>
             <Title />
             <WrapperInput>
+                <Tabs />
                 <InputText
                     onChange={handleInputChange}
                     isError={isInputError}
@@ -84,10 +87,17 @@ const TodoList = () => {
                     <Header />
                     <Lists />
                 </div>
+
+                {/* This only show on responsive view */}
+                <div className="hidden-gem"></div>
                 <FloatingButton
                     onClick={handleOpenModal}
                 />
+                <FloatingTabs />
+                <Tabs isFloat={true} />
                 <Footer />
+                {/* This only show on responsive view */}
+
             </WrapperBody>
             <Modal
                 isOpen={isModalOpen}

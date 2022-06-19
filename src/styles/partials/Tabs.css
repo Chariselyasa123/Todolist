@@ -1,0 +1,23 @@
+.tabs{
+    display: flex;
+    flex-direction: row;
+    gap:1rem;
+}
+
+@media (max-width: 640px) {
+    .tabs{
+        flex-direction: column;
+        transition: all .3s ease-in-out;
+        display: flex !important;
+    }
+
+    .float-show{
+        bottom:120px;
+        right:75px;
+    }
+
+    .float-hidden{
+        bottom:-100px;
+        right:75px;
+    }
+}

@@ -107,3 +107,40 @@ button{
 	font-size: 2.25rem; /* 36px */
 	line-height: 2.5rem; /* 40px */
 }
+
+.float{
+    position:fixed;
+    color: #555555;
+    display: none !important;
+    transition: all .3s ease-in-out;
+}
+
+.todo-neumorphism-outside{
+	background: #f0efeb;
+	box-shadow:  5px 5px 10px #bebdba,
+             	-5px -5px 10px #ffffff;
+}
+
+.todo-neumorphism-inside{
+	color: #f0efeb;
+	background: #686DE0;
+	box-shadow: inset 5px 5px 10px #4c50a4,
+				inset -5px -5px 10px #848aff;
+}
+
+.hidden-gem{
+	display: none;
+	position: fixed;
+	bottom:0px;
+	right:0px;
+	background-color: #f0efeb;
+	padding: 3.2rem 6rem;
+	z-index: 9;
+}
+
+
+@media (max-width: 640px) {
+	.hidden-gem{
+		display: block;		
+	}
+}

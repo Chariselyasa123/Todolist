@@ -2,12 +2,13 @@ import '../../styles/partials/ListItem.css'
 
 const ListItem = ({ todo, onChange, onDelete, openModal }) => {
     return (
-        <div className="list-item">
+        <div className="list-item todo-neumorphism-outside">
             <input
                 type="checkbox"
                 id={todo.id}
                 onChange={e => onChange(e, todo.id)}
                 checked={todo.isDone && true}
+                className="todo-neumorphism-outside"
             />
             <label
                 htmlFor={todo.id}

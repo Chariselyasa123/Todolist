@@ -4,7 +4,7 @@ const ButtonAdd = ({ onClick, type }) => {
     return (
         <button
             type="button"
-            className="button-add"
+            className="button-add todo-neumorphism-outside"
             onClick={onClick}
         >
             {type === 'add'
