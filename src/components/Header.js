@@ -1,5 +1,6 @@
 import '../styles/Header.css'
 import { useTab } from '../fetures/tab-contex'
+import Progressbar from './partials/Progressbar';
 
 const Header = () => {
     const { tab } = useTab();
@@ -11,6 +12,7 @@ const Header = () => {
                 {tab.tab === 'todo' && "Current Tasks"}
                 {tab.tab === 'completed' && "Completed Tasks"}
             </h1>
+            <Progressbar />
         </div>
     )
 }

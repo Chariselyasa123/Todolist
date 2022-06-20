@@ -1,0 +1,54 @@
+.wrapper-progressbar{
+    position: relative;
+}
+
+.circle{
+    position: absolute;
+    height: 3.5rem;
+    width: 3.5rem;
+    top: 0;
+    left: 0;
+    transform-origin: center;
+    transform: rotate(-90deg);
+}
+
+.circle circle{
+    height: 3.5rem;
+    width: 3.5rem;
+    fill: none;
+    stroke-width: 7;
+    stroke: rgba(40, 45, 194, 0.7);
+    stroke-linecap: round; 
+    transition: stroke-dashoffset 1s ease-in-out;
+}
+
+.circle1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3.5rem;
+    width: 3.5rem;
+    border-radius: 50%;
+    padding: 3%;
+    background: #f0efeb;
+    box-shadow: inset 2px 2px 4px #5a5a58,
+                inset -2px -2px 4px #ffffff;
+}
+
+.circle2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80%;
+    width: 80%;
+    border-radius: 50%;
+    background: #e2e1dd;
+    box-shadow:  2px 2px 4px #5a5a58,
+                -2px -2px 4px #ffffff;
+}
+
+/* @keyframes progress {
+    100% {
+        stroke-dashoffset: 0;
+    }
+ } */

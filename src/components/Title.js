@@ -1,5 +1,5 @@
 import '../styles/Title.css'
-import {name} from '../fetures/name'
+import { name } from '../fetures/name'
 
 const Title = () => {
 
