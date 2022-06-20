@@ -16,7 +16,9 @@
 ## Features
 
 - CRUD todo list
-- It has responsive design (for now only on mobile devices)
+- It has responsive design (for now only on smartphone devices)
+- Tab to see diffrent Todo's
+- Progress bar for make it more 🆒 😎
 
 ## Description
 

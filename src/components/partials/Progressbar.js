@@ -7,35 +7,36 @@ const Progressbar = () => {
     const [circle, setCircle] = useState({})
     const { todos } = useTodo()
 
-    const getPercentage = () => {
+    useEffect(() => {
         const todoCount = todos.length;
         const doneTodoCount = todos.filter(todo => todo.isDone).length;
         const progress = Math.round((doneTodoCount / todoCount) * 100);
-        return progress;
-    }
-
-    useEffect(() => {
-        const progress = getPercentage();
 
         const radius = 24.4;
         const circumference = Math.PI * (radius * 2);
-        setCircle({
-            ...circle,
+        setCircle(prev => ({
+            ...prev,
             percentage: progress,
             circumference: circumference
-        })
+        }))
 
-        // increase progress bar
         const timer = setInterval(() => {
             setprogress(prev => {
-                if (prev >= progress) {
-                    clearInterval(timer);
-                    return progress;
-                } else {
+                // increase previous progress by 1 if it's less than progress
+                // clear interval if previous progress is equal to progress
+                if (prev < progress) {
                     return prev + 1;
                 }
+                // decrease previous progress by 1 if it's more than progress
+                // clear interval if previous progress is equal to progress
+                if (prev > progress) {
+                    return prev - 1;
+                }
+                clearInterval(timer);
+                return prev;
             });
-        }, todos.length * 10);
+        }, todoCount * 10);
+
     }, [todos])
 
     return (
