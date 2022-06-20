@@ -18,7 +18,7 @@
 - CRUD todo list
 - It has responsive design (for now only on smartphone devices)
 - Tab to see diffrent Todo's
-- Progress bar for make it more 🆒 😎
+- Progress bar for make it more 🆒 😎 (still buggy 🐛🐛)
 
 ## Description
 
