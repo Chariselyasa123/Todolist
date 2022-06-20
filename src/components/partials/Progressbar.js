@@ -8,9 +8,6 @@ const Progressbar = () => {
     const { todos } = useTodo()
     const infiniteLoopStopper = useRef(0)
 
-    console.log(infiniteLoopStopper);
-
-
     useEffect(() => {
         const todoCount = todos.length;
         const doneTodoCount = todos.filter(todo => todo.isDone).length;
