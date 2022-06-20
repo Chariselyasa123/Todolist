@@ -1,11 +1,15 @@
 import '../../styles/partials/Progressbar.css'
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useTodo } from '../../fetures/todo-contex';
 
 const Progressbar = () => {
     const [progress, setprogress] = useState(0);
     const [circle, setCircle] = useState({})
     const { todos } = useTodo()
+    const infiniteLoopStopper = useRef(0)
+
+    console.log(infiniteLoopStopper);
+
 
     useEffect(() => {
         const todoCount = todos.length;
@@ -22,6 +26,12 @@ const Progressbar = () => {
 
         const timer = setInterval(() => {
             setprogress(prev => {
+                if (infiniteLoopStopper.current >= 201) {
+                    clearInterval(timer);
+                    infiniteLoopStopper.current = 0;
+                    return prev;
+                }
+                infiniteLoopStopper.current++;
                 // increase previous progress by 1 if it's less than progress
                 // clear interval if previous progress is equal to progress
                 if (prev < progress) {
@@ -33,6 +43,7 @@ const Progressbar = () => {
                     return prev - 1;
                 }
                 clearInterval(timer);
+                infiniteLoopStopper.current = 0;
                 return prev;
             });
         }, todoCount * 10);
